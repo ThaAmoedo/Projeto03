@@ -1,0 +1,320 @@
+
+/* *= seletor universal .... ele pega todos da pagina e zera, para vc ter o controle total */
+
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  /*funciona para o calculo do tamanho da caixa*/
+}
+
+
+header h1{
+  font-family: 'Archivo', sans-serif;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+  color: white;
+
+  margin-bottom: 24px;
+   
+
+}
+
+ header p {
+ /* font-family: 'Poppins';
+    font-style: normal;*/
+    font-size: 16px;
+    line-height: 26px;
+
+    color: #42D3FF;
+
+ }
+
+ header{  /*os textos terão essas medidas/tamanho, seus limites d largura */
+    width: 319px;
+      margin-top: 74px;
+ }
+
+ .page{   /*a página q tem tudo isso terá esse tamanho/ esses limites*/
+width: 736px;
+margin: auto ;
+
+ }
+
+ form {
+    margin-top: 42px; /*distnância do texto*/
+    background: #FAFAFC;
+    border-radius: 8px;  /*arredondamento da borda*/
+    min-height: 300px;  /*altura minima*/
+    width: 736px;   /*largura*/
+
+    padding: 64px;  /*preenchimento interno, isso vai fazer com que tudo dentro fique com uma distância das pontas do "quadrado" kkk*/
+
+
+    /*esses comandos em baixo vão definir os distanciamentos dos <fieldset> e alinhamento... agr se adiconar outro <fieldset> dentro do <form> ele era se alinhar automaticamente */
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+ }
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: #E5E5E5;
+}
+
+/*antes do conteudo*/
+body::before{
+
+content: '';  
+width: 100%;
+height: 368px;
+
+position: absolute;
+top:0;
+left:0;
+z-index: -1 ;  /*sobreposição*/
+background: #121214
+;
+
+
+}
+
+fieldset{
+    border:none;
+}
+
+
+.fieldset-wrapper{   /*todos dentro dele vão receber esses comandos, alinhamento e espaçamento*/
+display: flex;
+flex-direction: column;
+gap: 24px;
+
+}
+
+fieldset legend{
+font-family: 'Archivo';
+font-weight: 600;
+font-size: 24px;
+line-height: 34px;
+color: #32264D;
+
+/*linha*/
+width: 100%; /*largura*/
+padding-bottom: 16px;  /*preenchimento interno*/
+border-bottom: 1px solid #E6E6F0;
+}
+
+
+.input-wrapper{
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.input-wrapper label, .checkbox-wrapper{
+
+   /*font-family: 'Poppins';   já está no body ent nn precisa colocar aqui*/
+  font-size: 14px;
+  line-height: 24px;
+  color: #4E4958;
+
+   margin-bottom: 8px;
+
+}
+
+
+.input-wrapper label span{
+margin-left: 12px;
+
+font-size: 12px;
+line-height: 20px;
+
+color: #a9a7af;
+
+
+}
+
+.input-wrapper label span:hover{
+    color: #6c6a71;
+
+}
+
+.input-wrapper input, .input-wrapper textarea , .input-wrapper select{
+background: #FAFAFC;
+border: 1px solid #E6E6F0;
+border-radius: 8px;
+    
+
+height: 56px;
+
+padding: 0/*em cima e em baixo nn importa*/   24px/*mais dos lados eu quero 24px*/ ;
+
+font-family: 'Poppins';
+font-size: 16px;
+line-height: 26px;
+
+color: #6c6a71;
+
+}
+
+.input-wrapper textarea{
+
+padding: 0;
+
+height: 168px;
+
+}
+
+.input-wrapper select{
+
+appearance: none;
+
+/*-moz-appearance: none;
+-webkit-appearance: none;
+-ms-appearance: none  ;
+são só exemplos pois em alguns lugares são desabilitadas ou n funciona o "appearance: none;"
+no site https://caniuse.com/ vc pode ver se o comando está habilitado em quais navegadores
+*/
+
+
+background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1_54)'%3E%3Cpath d='M8 10L12 14L16 10' stroke='%239C98A6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1_54'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+background-repeat: no-repeat;  /*não havera repetição, usando isso fica só uma setinha*/
+background-position: right 24px top 50%; /*ou "top center" */
+
+
+}
+
+
+
+
+.col-3{
+
+    display: flex;
+    gap:20px;
+
+}
+
+.col > div:nth-child(1){  /*aqui está selecionando o primeiro "filho", a primeira div dentro do col-3, é bom colocar o > primeiro para n ficar uma bagunça*/
+
+width: 100%;
+
+} 
+/*.checkbox-wrapper{
+
+    /*font-size: 14px;
+    line-height: 24px;
+    color: #4E4958; 
+
+}*/
+.checkbox-wrapper{
+    position: relative;
+}
+
+.checkbox-wrapper input{   /*tudo para manter na tela e n tirar a função, porém ta invisivel*/
+    position: absolute;
+     top: 0;
+     left: 0;
+
+     width: 24px;
+    height: 24px;
+
+    opacity: 0;
+
+    /*z-index: -2;   -também funciona kkkk
+
+    display: none;*/
+}
+
+.checkbox-wrapper label{   
+    align-items: center;
+   display: flex;
+   gap:16px;
+
+    margin:0;
+
+}
+
+.checkbox-wrapper label::before{
+
+    content: '';
+    width: 24px;
+    height: 24px;
+    display: block;
+
+
+    background: #FAFAFC;
+    border: 1px solid #E6E6F0;
+    border-radius: 8px;
+
+}
+
+
+.checkbox-wrapper input:checked + label::before{   /*quando eu clicar no input ele vai dar checkd e aplico no label o red (ou a cor ali q eu escolher) kkkk */
+
+    /*background: #ff0000;*/
+
+    background-image: url("data:image/svg+xml,%3Csvg width='18' height='14' viewBox='0 0 18 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 11.17L1.83 7L0.410004 8.41L6 14L18 2L16.59 0.589996L6 11.17Z' fill='%2342D3FF'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: right 4px top 50%; ;
+
+}
+
+.checkbox-wrapper input:focus + label::before{  /*se ele estiver em foco(o chack) a gente pega o label before e add uma borda*/
+
+    outline: 2px solid black;
+
+}
+
+
+
+footer{
+    width: 736px;
+    height: 136px;
+    
+    background: #F0F0F4;
+    border-radius: 8px;
+    /* margin-top: 1px; */
+    border-top: 1px solid #D6D6D6 ;
+    border-radius: 0 0 8px 8px;   /*0 cima cima, 8 lateral em baixo direita e 8 lateral em baixo esquerda*/
+
+    display: flex;  /*ele vai esticar tudo*/
+     flex-direction: column;
+
+
+     padding: 40px /*em baixo*/     64px /*nas laterais*/;
+     margin-bottom: 100px;  /*pra o "bloco" se afastar do final da página*/
+}
+
+footer .button{
+     
+    height: 56px;
+
+    background: #04D361;
+    border-radius: 8px;
+
+    font-family: 'Archivo';  
+     
+    font-weight: 600;
+     font-size: 16px;
+    line-height: 26px;
+
+
+     color: #FFFFFF;
+     border: 0;
+
+}
+
+footer .button:hover{
+
+    background: #03a84d;
+}
+
+
+input:invalid{   /*quando eu n colocar alguma coisa ali eu quero....*/
+
+border: 1px solid #FF1010;
+
+}
